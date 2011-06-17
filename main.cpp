@@ -21,6 +21,8 @@ int main()
 		cout << p->name << endl;
 	}
 
+	cout << endl;
+
 	cout << "Packages: " << packages.size() << endl;
 	cout << "Scripts: " << scripts.size() << endl;
 
