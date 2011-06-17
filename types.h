@@ -11,6 +11,7 @@ namespace Slackware
 {
 
 typedef std::vector<Slackware::Package> package_vec;
+typedef std::vector<Slackware::Script> script_vec;
 typedef std::vector<std::string> string_vec;
 
 };

@@ -13,11 +13,14 @@ package.o: package.cpp package.h types.h
 system.o: system.cpp system.h types.h
 	$(CPP) $(CFLAGS) -c -o $@ $<
 
+x: x.cpp
+	$(CPP) $(CFLAGS) $(LDFLAGS) -std=gnu++0x -o $@ $<
 
-x: x.cpp libslackware.so types.h
-	$(CPP) $(CFLAGS) $(LDFLAGS) -std=gnu++0x -o $@ $< -lslackware
 
-all: x libslackware.so
+main: main.cpp libslackware.so types.h
+	$(CPP) $(CFLAGS) $(LDFLAGS) -o $@ $< -lslackware
+
+all: x main libslackware.so
 
 clean:
-	rm -rf *~ x *.o *.so
+	rm -rf main *~ x *.o *.so

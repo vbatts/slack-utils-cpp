@@ -26,6 +26,48 @@ package_vec System::get_installed_packages()
 	return vp;
 }
 
+package_vec System::get_removed_packages()
+{
+	package_vec vp;
+
+	string_vec files = get_files(PATH_REMOVED_PACKAGES);
+
+	for (string_vec::iterator i = files.begin(); i != files.end(); i++)
+	{
+		vp.push_back(*i);
+	}
+
+	return vp;
+}
+
+script_vec System::get_installed_scripts()
+{
+	script_vec vp;
+
+	string_vec files = get_files(PATH_INSTALLED_SCRIPTS);
+
+	for (string_vec::iterator i = files.begin(); i != files.end(); i++)
+	{
+		vp.push_back(*i);
+	}
+
+	return vp;
+}
+
+script_vec System::get_removed_scripts()
+{
+	script_vec vp;
+
+	string_vec files = get_files(PATH_REMOVED_SCRIPTS);
+
+	for (string_vec::iterator i = files.begin(); i != files.end(); i++)
+	{
+		vp.push_back(*i);
+	}
+
+	return vp;
+}
+
 string_vec System::get_files(string this_path)
 {
 	string_vec vs;

@@ -5,11 +5,7 @@
 
 #include <dirent.h>
 
-#include "slackware.h"
-#include "types.h"
-
 using namespace std;
-using namespace Slackware;
 
 void show_string_sort()
 {
@@ -63,39 +59,11 @@ void show_int_sort()
 	v.clear();
 }
 
-package_vec get_packages(string dir)
-{
-	package_vec vp;
-	//vector<string> vs;
-	DIR *dp;
-	struct dirent *dirp;
-
-	if ((dp = opendir(dir.c_str())) == NULL)
-	{
-		throw("F");
-	}
-
-	while ((dirp = readdir(dp)) != NULL)
-	{
-		vp.push_back(Package(string(dirp->d_name)));
-	}
-
-	return vp;
-}
-
 int main()
 {
-	package_vec packages;
 
-	packages = get_packages(PATH_INSTALLED_PACKAGES);
-
-	for (package_vec::iterator p = packages.begin(); p != packages.end() ; p++)
-	{
-		cout << p->name << endl;
-	}
-
-	//show_int_sort();
-	//show_string_sort();
+	show_int_sort();
+	show_string_sort();
 
 	return 0;
 }
