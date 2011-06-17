@@ -1,6 +1,7 @@
 #include <iostream>
 
-#include "slackware.h"
+#include "package.h"
+#include "system.h"
 #include "types.h"
 
 using namespace std;

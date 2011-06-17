@@ -1,0 +1,19 @@
+
+TODOs:
+	* All kinds of anything that could be thought of
+	* Ensure the headers properly line up, even after installation.
+	* Build out searching through the package contents
+
+Compile:
+	$> make
+
+Install:
+	$> make install
+
+	or, for 64bit package,
+
+	$> make install DESTDIR=`pwd`/tmp LIBDIRSUFFIX=64
+
+License:
+	See LICENSE.
+
