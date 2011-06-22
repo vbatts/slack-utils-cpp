@@ -18,7 +18,7 @@ int main()
 
 	for (package_vec::iterator p = packages.begin(); p != packages.end() ; p++)
 	{
-		cout << p->name << endl;
+		cout << p->pkg_name << endl;
 	}
 
 	cout << endl;
