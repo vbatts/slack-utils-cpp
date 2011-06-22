@@ -40,8 +40,13 @@ public:
 
 	std::string pkg_name;
 	std::string root;
+	pkg_info_t info;
 
 	file_vec get_owned_files();
+
+	void parse_name();
+private:
+	;;
 
 };
 
