@@ -26,6 +26,12 @@ main: main.cpp libslackware.so types.h
 	$(CPP) $(CFLAGS) $(LDFLAGS) -o $@ $< -lslackware
 
 
+.valgrind:
+	$(shell which valgrind 2>/dev/null >/dev/null || echo "ERROR: 'valgrind' REQUIRED, SEE http://slackbuilds.org")
+
+test: .valgrind main
+	valgrind --tool=memcheck --leak-check=full -v ./main
+
 docs:
 	doxygen .
 
