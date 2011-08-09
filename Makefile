@@ -40,6 +40,18 @@ pdf: docs
 
 all: x main libslackware.so
 
+help:
+	@echo "Following targets are available:"
+	@echo
+	@echo "  main    - the executable"
+	@echo "  install - to install on the system (can use the env settings of DESTDIR, PREFIX and LIBDIRSUFFIX)"
+	@echo "  docs    - doxygen docs"
+	@echo "  pdf     - pdf docs"
+	@echo "  test    - valgrind tests"
+	@echo "  clean   - housekeeping"
+	@echo "  x       - an executable"
+	@echo
+
 install: main libslackware.so docs
 	install -d $(DESTDIR)$(PREFIX)/bin
 	install -d $(DESTDIR)$(PREFIX)/lib$(LIBDIRSUFFIX)

@@ -28,12 +28,13 @@ int main()
 	cout << "Scripts: " << scripts.size() << endl;
 
 	/// struct testing
-	pkg = packages[0];
+	//pkg = packages[0];
 
-	// this is present segfaulting ...
-	pkg.parse_name();
-	cout << pkg.pkg_name << endl;
-	cout << pkg.info.name << endl;
+	/// this is presently segfaulting ...
+	//pkg.parse_name();
+
+	//cout << pkg.pkg_name << endl;
+	//cout << pkg.info.name << endl;
 
 
 	return 0;
