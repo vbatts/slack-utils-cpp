@@ -1,5 +1,5 @@
 
-#include "package.h"
+#include "slackware.h"
 
 #include <iostream>
 #include <fstream>

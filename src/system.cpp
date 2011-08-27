@@ -1,5 +1,5 @@
 
-#include "system.h"
+#include "slackware.h"
 #include <dirent.h>
 
 using namespace std;
