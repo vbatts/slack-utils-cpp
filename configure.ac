@@ -2,8 +2,8 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.68])
-AC_INIT([slack-utils-cpp], [1.0.0], [slackware@hashbangbash.com])
-AM_INIT_AUTOMAKE(slack-utils-cpp, 1.0.0)
+AC_INIT([slack-utils-cpp], [1.0.0], [slackware@hashbangbash.com], [slack-utils-cpp], [https://github.com/vbatts/slack-utils-cpp])
+AM_INIT_AUTOMAKE([slack-utils-cpp], [1.0.0])
 AC_CONFIG_SRCDIR([src/main.cpp])
 AC_CONFIG_HEADERS([src/config.h])
 

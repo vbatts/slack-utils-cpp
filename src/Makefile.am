@@ -16,6 +16,9 @@ slack_utils_LDADD= 		\
 slack_utils_SOURCES=		\
 		main.cpp
 
+libslackware_la_LDFLAGS=	\
+		-release $(VERSION)
+
 libslackware_la_SOURCES=	\
 		package.cpp	\
 		system.cpp

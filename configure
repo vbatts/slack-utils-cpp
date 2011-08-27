@@ -573,7 +573,7 @@ PACKAGE_TARNAME='slack-utils-cpp'
 PACKAGE_VERSION='1.0.0'
 PACKAGE_STRING='slack-utils-cpp 1.0.0'
 PACKAGE_BUGREPORT='slackware@hashbangbash.com'
-PACKAGE_URL=''
+PACKAGE_URL='https://github.com/vbatts/slack-utils-cpp'
 
 ac_unique_file="src/main.cpp"
 # Factoring default headers for most tests.
@@ -1409,6 +1409,7 @@ Use these variables to override the choices made by `configure' or to help
 it to find libraries and programs with nonstandard names/locations.
 
 Report bugs to <slackware@hashbangbash.com>.
+slack-utils-cpp home page: <https://github.com/vbatts/slack-utils-cpp>.
 _ACEOF
 ac_status=$?
 fi
@@ -16175,7 +16176,8 @@ $config_headers
 Configuration commands:
 $config_commands
 
-Report bugs to <slackware@hashbangbash.com>."
+Report bugs to <slackware@hashbangbash.com>.
+slack-utils-cpp home page: <https://github.com/vbatts/slack-utils-cpp>."
 
 _ACEOF
 cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=1
