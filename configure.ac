@@ -15,6 +15,27 @@ AC_PROG_CC
 
 # Checks for libraries.
 
+AC_LANG(C++)
+SAVED_LDFLAGS=$LDFLAGS
+LDFLAGS="$LDFLAGS -lboost_filesystem"
+AC_LINK_IFELSE(
+  [AC_LANG_PROGRAM([#include <boost/filesystem.hpp>],
+    [  boost::filesystem::path p(); ])],
+  [BOOST_THREAD_LIBS="-lboost_filesystem"],
+  [AC_MSG_ERROR([libboost_filesystem is not installed.])])
+LDFLAGS=$SAVED_LDFLAGS
+
+AC_LANG(C++)
+SAVED_LDFLAGS=$LDFLAGS
+LDFLAGS="$LDFLAGS -lboost_regex"
+AC_LINK_IFELSE(
+  [AC_LANG_PROGRAM([#include <boost/regex.hpp>],
+    [  boost::regex re(); ])],
+  [BOOST_THREAD_LIBS="-lboost_regex"],
+  [AC_MSG_ERROR([libboost_regex is not installed.])])
+LDFLAGS=$SAVED_LDFLAGS
+
+
 # Checks for header files.
 
 # Checks for typedefs, structures, and compiler characteristics.

@@ -8,32 +8,22 @@ using namespace Slackware;
 int main()
 {
 	package_vec packages;
-	script_vec scripts;
 	System sys;
-	Package pkg;
 
 	packages = sys.get_installed_packages();
-	scripts = sys.get_installed_scripts();
 
 	for (package_vec::iterator p = packages.begin(); p != packages.end() ; p++)
 	{
-		cout << p->pkg_name << endl;
+		cout << "Name: " << p->name << endl
+			<< "  Version: " << p->version << endl
+			<< "  Arch: " << p->arch << endl
+			<< "  Build: " << p->build << endl
+			<< endl;
 	}
 
 	cout << endl;
 
 	cout << "Packages: " << packages.size() << endl;
-	cout << "Scripts: " << scripts.size() << endl;
-
-	/// struct testing
-	//pkg = packages[0];
-
-	/// this is presently segfaulting ...
-	//pkg.parse_name();
-
-	//cout << pkg.pkg_name << endl;
-	//cout << pkg.info.name << endl;
-
 
 	return 0;
 }

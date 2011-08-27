@@ -14,17 +14,6 @@
 namespace Slackware
 {
 
-/// Slackware::Package stuff
-typedef std::vector<std::string> file_vec;
-typedef struct {
-	std::string name;
-	std::string version;
-	std::string arch;
-	std::string build;
-	std::string tag;
-	std::string tag_sep;
-} pkg_info_t;
-
 /**
  *
  * \class Slackware::AbstractPackage
@@ -52,13 +41,20 @@ public:
 	Package(std::string this_name);
 	~Package();
 
-	std::string pkg_name;
+	//std::string pkg_name;
 	std::string root;
-	pkg_info_t info;
 
-	file_vec get_owned_files();
+	std::string name;
+	std::string version;
+	std::string arch;
+	std::string build;
+	std::string tag;
+	std::string tag_sep;
 
-	void parse_name();
+	std::vector< std::string > get_owned_files();
+
+	std::string pkg_name();
+	void parse_name(std::string filename);
 private:
 	;;
 
@@ -71,9 +67,10 @@ public:
 	Script();
 	Script(std::string this_name);
 
-	std::string pkg_name;
+	//std::string pkg_name;
 	std::string root;
 
+	std::string pkg_name;
 };
 
 /// Slackware::System stuff

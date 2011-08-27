@@ -16,6 +16,10 @@ slack_utils_LDADD= 		\
 slack_utils_SOURCES=		\
 		main.cpp
 
+libslackware_la_LIBADD=		\
+		-lboost_filesystem \
+		-lboost_regex
+
 libslackware_la_LDFLAGS=	\
 		-release $(VERSION)
 
