@@ -1,3 +1,11 @@
 Session.vim
 *~
 *.swp
+*.o
+.deps
+.libs
+*.lo
+*.la
+Makefile
+Makefile.in
+config.h
