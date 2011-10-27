@@ -62,9 +62,9 @@ Package::~Package()
 
 string Package::pkg_name()
 {
-	string tmp_str;
+	//string tmp_str;
 	// TODO reassemble the attributes
-	return tmp_str;
+	return name + PACKAGE_NAME_TOKEN + version + PACKAGE_NAME_TOKEN + arch + PACKAGE_NAME_TOKEN + build;
 }
 
 vector< string > Package::get_owned_files()
@@ -107,7 +107,7 @@ void Package::parse_name(string filename)
 		if (name == "")
 			name = splitVec.back();
 		else
-			name = splitVec.back() + "-" + name;
+			name = splitVec.back() + PACKAGE_NAME_TOKEN + name;
 		splitVec.pop_back();
 	}
 }
