@@ -1,16 +1,12 @@
 
 #include "slackware.h"
 #include <dirent.h>
-#include <iostream>
 
 #include <boost/filesystem.hpp>
 #include <boost/regex.hpp>
 
-#define DEBUG cout << __FILE__ << ":" << __LINE__ << ": " << __func__ << "(): "
-
-using namespace std;
+using std::string;
 namespace fs = boost::filesystem;
-using namespace boost;
 
 namespace Slackware
 {
@@ -24,15 +20,12 @@ package_vec System::get_installed_packages()
 {
 	package_vec vp;
 
-	//DEBUG << endl;
 	string_vec files = get_files(PATH_INSTALLED_PACKAGES);
-	//DEBUG << endl;
 
 	for (string_vec::iterator i = files.begin(); i != files.end(); i++)
 	{
 		vp.push_back(Package(*i)); /* BOOM */
 	}
-	//DEBUG << endl;
 
 	return vp;
 }
@@ -84,7 +77,6 @@ string_vec System::get_files(string this_path)
 	string_vec vs;
 	fs::directory_iterator end_itr;
 
-	//DEBUG << endl;
 	if (fs::exists(this_path))
 	{
 		fs::directory_iterator end_itr;
@@ -98,7 +90,6 @@ string_vec System::get_files(string this_path)
 			}
 		}
 	}
-	//DEBUG << endl;
 
 	return vs;
 }

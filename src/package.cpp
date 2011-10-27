@@ -13,8 +13,12 @@
 
 #define DEBUG cout << __FILE__ << ":" << __LINE__ << ": " << __func__ << "(): "
 
-using namespace std;
-using namespace boost;
+using std::cout;
+using std::endl;
+using std::string;
+using std::vector;
+using std::ifstream;
+using std::ios;
 
 const char* PACKAGE_NAME_TOKEN = "-";
 
@@ -86,7 +90,10 @@ vector< string > Package::get_owned_files()
 void Package::parse_name(string filename)
 {
 	split_vector_type splitVec;
-	split( splitVec, filename, is_any_of(PACKAGE_NAME_TOKEN), token_compress_on );
+	boost::split( splitVec,
+			filename,
+			boost::is_any_of(PACKAGE_NAME_TOKEN),
+			boost::token_compress_on );
 
 	// TODO split this up further, for tag
 	// although that'll require a pattern search for alienBob's format

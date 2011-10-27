@@ -1,9 +1,15 @@
+
 #include <iostream>
 #include <ostream>
 #include <vector>
 #include <algorithm>
 
-using namespace std;
+using std::cout;
+using std::endl;
+using std::string;
+using std::vector;
+using std::ostream;
+
 
 void show_string_sort()
 {
