@@ -101,8 +101,15 @@ void Package::parse_name(string filename)
 	version = splitVec.back();
 	splitVec.pop_back();
 
-	name = splitVec.back();
-	splitVec.pop_back();
+	name = "";
+	while (splitVec.size() > 0)
+	{
+		if (name == "")
+			name = splitVec.back();
+		else
+			name = splitVec.back() + "-" + name;
+		splitVec.pop_back();
+	}
 }
 
 /// A subclass to handle the scripts, similarly as packages

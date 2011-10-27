@@ -3,8 +3,6 @@
 #include <vector>
 #include <algorithm>
 
-#include <dirent.h>
-
 using namespace std;
 
 void show_string_sort()
