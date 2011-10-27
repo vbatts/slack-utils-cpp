@@ -24,15 +24,15 @@ package_vec System::get_installed_packages()
 {
 	package_vec vp;
 
-	DEBUG << endl;
+	//DEBUG << endl;
 	string_vec files = get_files(PATH_INSTALLED_PACKAGES);
-	DEBUG << endl;
+	//DEBUG << endl;
 
 	for (string_vec::iterator i = files.begin(); i != files.end(); i++)
 	{
 		vp.push_back(Package(*i)); /* BOOM */
 	}
-	DEBUG << endl;
+	//DEBUG << endl;
 
 	return vp;
 }
@@ -84,7 +84,7 @@ string_vec System::get_files(string this_path)
 	string_vec vs;
 	fs::directory_iterator end_itr;
 
-	DEBUG << endl;
+	//DEBUG << endl;
 	if (fs::exists(this_path))
 	{
 		fs::directory_iterator end_itr;
@@ -98,7 +98,7 @@ string_vec System::get_files(string this_path)
 			}
 		}
 	}
-	DEBUG << endl;
+	//DEBUG << endl;
 
 	return vs;
 }

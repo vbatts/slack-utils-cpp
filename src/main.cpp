@@ -14,11 +14,11 @@ int main()
 
 	for (package_vec::iterator p = packages.begin(); p != packages.end() ; p++)
 	{
-		cout << "Name: " << p->name << endl
-			<< "  Version: " << p->version << endl
-			<< "  Arch: " << p->arch << endl
-			<< "  Build: " << p->build << endl
-			<< endl;
+		cout << "< Package  name:\"" << p->name
+			<< "\" version:\"" << p->version
+			<< "\" arch:\"" << p->arch
+			<< "\" build:\"" << p->build
+			<< "\" >" << endl;
 	}
 
 	cout << endl;

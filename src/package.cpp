@@ -16,7 +16,7 @@
 using namespace std;
 using namespace boost;
 
-const int PACKAGE_NAME_TOKEN = '-';
+const char* PACKAGE_NAME_TOKEN = "-";
 
 namespace Slackware {
 
@@ -88,7 +88,7 @@ vector< string > Package::get_owned_files()
 void Package::parse_name(string filename)
 {
 	split_vector_type splitVec;
-	split( splitVec, filename, is_any_of("-"), token_compress_on );
+	split( splitVec, filename, is_any_of(PACKAGE_NAME_TOKEN), token_compress_on );
 
 	// TODO split this up further, for tag
 	// although that'll require a pattern search for alienBob's format
