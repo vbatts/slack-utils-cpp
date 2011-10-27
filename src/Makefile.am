@@ -11,9 +11,11 @@ include_HEADERS=		\
 		slackware.h
 
 slack_utils_LDADD= 		\
+		-lboost_program_options \
 		libslackware.la
 
 slack_utils_SOURCES=		\
+		parse_args.cpp	\
 		main.cpp
 
 libslackware_la_LIBADD=		\
