@@ -62,8 +62,6 @@ Package::~Package()
 
 string Package::pkg_name()
 {
-	//string tmp_str;
-	// TODO reassemble the attributes
 	return name + PACKAGE_NAME_TOKEN + version + PACKAGE_NAME_TOKEN + arch + PACKAGE_NAME_TOKEN + build;
 }
 
