@@ -1,5 +1,6 @@
 
 #include "parse_args.hpp"
+#include "config.h"
 
 #include <iostream>
 #include <string>
@@ -30,6 +31,7 @@ int parse_args(boost::program_options::variables_map* vm, int argc, char** argv)
 	po::options_description desc(msg);
 	desc.add_options()
 		("help,h", "Show this help")
+		("version", "Show the version")
 		("list,l", "List the installed packages")
 		("root", po::value< string >(), "Base the root directory to an alternate besides '/' "
 		 "Setting ROOT environment variable does the same thing.")
@@ -72,6 +74,16 @@ int parse_args(boost::program_options::variables_map* vm, int argc, char** argv)
 	*/
 	if (vm->count("help")) {
 		cout << desc << endl;
+		return 1;
+	}
+	if (vm->count("version")) {
+		cout << PACKAGE_NAME
+			<< ": "
+			<< PACKAGE_VERSION
+			<< " ( "
+			<< PACKAGE_URL
+			<< " )"
+			<< endl;
 		return 1;
 	}
 
