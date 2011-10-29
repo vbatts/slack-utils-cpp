@@ -21,6 +21,7 @@ int main(int argc, char** argv)
 	if (parse_args(&vm, argc, argv) != 0)
 		return 1;
 
+	// TODO Even though the methods don't have a configurable root yet ...
 	root_char = getenv("ROOT");
 	if (root_char)
 		root = string(root_char);

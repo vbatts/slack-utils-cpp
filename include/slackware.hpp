@@ -7,7 +7,5 @@
 #include <slack-utils/system.hpp>
 #include <slack-utils/TarBall.hpp>
 
-//#include <slack-utils/types.hpp>
-
 #endif // SLACKWARE_HPP
 

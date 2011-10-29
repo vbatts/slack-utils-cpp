@@ -2,7 +2,7 @@ ACLOCAL_AMFLAGS = -I m4 --install
 
 slack_utilsincludedir = $(pkgincludedir)
 slack_utilsinclude_HEADERS=	\
-		slack-utils/types.hpp	\
+		slack-utils/constants.hpp \
 		slack-utils/package.hpp	\
 		slack-utils/system.hpp	\
 		slack-utils/TarBall.hpp
