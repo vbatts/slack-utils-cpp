@@ -1,5 +1,7 @@
 
-#include "slackware.h"
+//#include <slackware.hpp>
+#include <slack-utils/package.hpp>
+#include <slack-utils/constants.hpp>
 
 #include <iostream>
 #include <fstream>

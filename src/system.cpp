@@ -1,6 +1,8 @@
 
-#include "slackware.h"
-#include <dirent.h>
+//#include <slackware.hpp>
+#include <slack-utils/system.hpp>
+#include <slack-utils/package.hpp>
+#include <slack-utils/constants.hpp>
 
 #include <boost/filesystem.hpp>
 #include <boost/regex.hpp>

@@ -1,8 +1,8 @@
 
 #include <iostream>
 
-#include "slackware.h"
 #include "parse_args.hpp"
+#include <slackware.hpp>
 
 using std::cout;
 using std::endl;
@@ -14,7 +14,7 @@ int main(int argc, char** argv)
 	if (parse_args(&opts, argc, argv) != 0)
 		return 1;
 
-	if (opts.count("list") > 0 and opts["list"] == "true")
+	if ((opts.count("list") > 0 and opts["list"] == "true") or (argc == 1))
 	{
 		package_vec packages;
 		System sys;
