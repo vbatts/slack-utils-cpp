@@ -35,6 +35,7 @@ int parse_args(boost::program_options::variables_map* vm, int argc, char** argv)
 		("list,l", "List the installed packages")
 		("root", po::value< string >(), "Base the root directory to an alternate besides '/' "
 		 "Setting ROOT environment variable does the same thing.")
+		("doinst", "List installed package's installation script, used with --list")
 		("args", po::value< vector< string > >(), "the args filtered for")
 		//(",l", po::value<int>(), "set compression level")
 	;

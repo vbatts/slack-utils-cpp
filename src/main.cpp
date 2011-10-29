@@ -30,23 +30,46 @@ int main(int argc, char** argv)
 
 	if (vm.count("list"))
 	{
-		package_vec packages;
 		System sys;
-
-		packages = sys.get_installed_packages();
-
-		for (package_vec::iterator p = packages.begin(); p != packages.end() ; p++)
+		if (vm.count("doinst"))
 		{
-			cout << p->pkg_name() << endl;
+			script_vec scripts;
+			scripts = sys.get_installed_scripts();
+
+			for (script_vec::iterator s = scripts.begin(); s != scripts.end() ; s++)
+			{
+				cout << s->pkg_name << endl;
+			}
+
+			cout << endl;
+
+			cout << "Scripts: " << scripts.size() << endl;
 		}
+		else
+		{
+			package_vec packages;
 
-		cout << endl;
+			packages = sys.get_installed_packages();
 
-		cout << "Packages: " << packages.size() << endl;
+			for (package_vec::iterator p = packages.begin(); p != packages.end() ; p++)
+			{
+				cout << p->pkg_name() << endl;
+			}
+
+			cout << endl;
+
+			cout << "Packages: " << packages.size() << endl;
+		}
 		return 0;
 	}
 
-	cout << "Please provide flags." << endl;
+	cout << argv[0]
+		<< ": need proper flags"
+		<< endl
+		<< "Try "
+		<< argv[0]
+		<< " --help for help"
+		<< endl;
 
 	return 0;
 }
