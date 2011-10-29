@@ -26,10 +26,13 @@ namespace po = boost::program_options;
 
 int parse_args(boost::program_options::variables_map* vm, int argc, char** argv)
 {
-	po::options_description desc("Allowed Options");
+	string msg = string(argv[0]) + " [options] [args]\n\nAllowed Options";
+	po::options_description desc(msg);
 	desc.add_options()
 		("help,h", "Show this help")
 		("list,l", "List the installed packages")
+		("root", po::value< string >(), "Base the root directory to an alternate besides '/' "
+		 "Setting ROOT environment variable does the same thing.")
 		("args", po::value< vector< string > >(), "the args filtered for")
 		//(",l", po::value<int>(), "set compression level")
 	;
