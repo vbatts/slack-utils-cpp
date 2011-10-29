@@ -24,7 +24,7 @@ using std::endl;
 using std::vector;
 namespace po = boost::program_options;
 
-int parse_args(opts_map_t* opts, int argc, char** argv)
+int parse_args(boost::program_options::variables_map* vm, int argc, char** argv)
 {
 	po::options_description desc("Allowed Options");
 	desc.add_options()
@@ -36,12 +36,12 @@ int parse_args(opts_map_t* opts, int argc, char** argv)
 	po::positional_options_description p;
 	p.add("args", -1);
 
-	po::variables_map vm;
 	po::store(po::command_line_parser(argc, argv).
 			options(desc).positional(p).run(),
-			vm);
-	po::notify(vm);
+			*vm);
+	po::notify(*vm);
 
+	/*
 	if (vm.count("args"))
 	{
 		string tmp_s = "";
@@ -61,15 +61,15 @@ int parse_args(opts_map_t* opts, int argc, char** argv)
 		(*opts)["args"] = "";
 	}
 
-	if (vm.count("help")) {
-		cout << desc << endl;
-		return 1;
-	}
-
 	if (vm.count("list")) {
 		(*opts)["list"] = "true";
 	} else {
 		(*opts)["list"] = "false";
+	}
+	*/
+	if (vm->count("help")) {
+		cout << desc << endl;
+		return 1;
 	}
 
 	return 0;

@@ -1,8 +1,9 @@
 
 #include <iostream>
 
-#include "parse_args.hpp"
 #include <slackware.hpp>
+
+#include "parse_args.hpp"
 
 using std::cout;
 using std::endl;
@@ -10,11 +11,11 @@ using namespace Slackware;
 
 int main(int argc, char** argv)
 {
-	opts_map_t opts;
-	if (parse_args(&opts, argc, argv) != 0)
+	boost::program_options::variables_map vm;
+	if (parse_args(&vm, argc, argv) != 0)
 		return 1;
 
-	if ((opts.count("list") > 0 and opts["list"] == "true") or (argc == 1))
+	if (vm.count("list"))
 	{
 		package_vec packages;
 		System sys;
